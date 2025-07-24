@@ -1,0 +1,282 @@
+/* ==================== รีเซ็ตค่าเริ่มต้น ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== พื้นหลังและฟอนต์หลักของเว็บไซต์ ==================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #6f6f6f, #5d5d5d, #4b4b4b, #3a3a3a, #2a2a2a, #222222, #1a1a1a, #121212, #0e0e0e, #0a0a0a, #050505, #000000);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==================== กล่อง Header ==================== */
+.container {
+    position: fixed;      /* ทำให้ลอยอยู่ด้านบนตลอด */
+    top: 0;
+    left: 50%;           /* กึ่งกลางหน้าจอ */
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    max-width: 1500px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;        /* ให้อยู่เหนือเนื้อหาอื่น */
+    transition: width 0.5s ease;
+}
+
+.container.shrink {
+    width: 50%;
+    background-color: rgba(0, 43, 68, 0.68); /* หรือ #002b44ad ก็ได้ */
+    border-radius: 12px;
+    backdrop-filter: blur(8px);    /* เพิ่มเบลอพื้นหลัง */
+    -webkit-backdrop-filter: blur(8px); /* สำหรับ Safari */
+    transition: all 0.3s ease;
+}
+
+/* ==================== โลโก้ด้านซ้าย ==================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 50px;
+}
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    user-select: none;
+}
+
+/* ==================== Navbar กลาง ==================== */
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+}
+.navbar ul li a:hover {
+    background-color: #858585;
+}
+
+/* ==================== ปุ่ม Login / Signup ==================== */
+.singin-buttom ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.singin-buttom ul li {
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.singin-buttom ul li:hover {
+    background-color: #858585;
+}
+.box-singin-buttom:hover {
+    background-color: #f8a8a8 !important;
+}
+.box-singin-buttom {
+    color: #000 !important;
+    background-color: #ddd;
+}
+
+/* =============== ฟอร์ม Login =============== */
+.haederform h2 {
+    margin-top: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    max-width: 90%;
+    background: linear-gradient(145deg, #666666, #4d4d4d);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: white;
+    animation: fadeInScale 0.8s ease-out forwards;
+    box-sizing: border-box;
+}
+
+/* ฟอร์มภายใน */
+.loginform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input & Button */
+.loginform input,
+.loginform button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.loginform input {
+    background-color: #eee;
+    color: #222;
+}
+
+.loginform input:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3);
+}
+
+button {
+    background-color: #888;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #a0a0a0;
+    transform: scale(1.03);
+}
+
+.haederform h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.question-creataccount {
+    color: #00b4cc;
+    transition: 0.3s;
+}
+
+.question-creataccount:hover {
+    color: #008697;
+    transform: scale(1.03);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* พื้นหลัง Particle เต็มจอ */
+#space-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1a26, #000000);
+    animation: bgGlow 20s ease-in-out infinite alternate;
+}
+
+/* แสงพื้นหลังเลื่อน */
+@keyframes bgGlow {
+    0% { filter: brightness(1) contrast(1); }
+    100% { filter: brightness(1.1) contrast(1.2); }
+}
+
+/* =============== Main Content =============== */
+main {
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 0; /* ป้องกันล้น */
+}
+
+
+/* =============== Footer ติดล่างสุดของหน้าจอ =============== */
+.footer {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    user-select: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    box-sizing: border-box;
+}
+
+
+
+.company-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #00ffff;
+}
+
+.copyright {
+    margin: 0 0 8px 0;
+    color: #aaa;
+}
+
+.made-by {
+    font-style: italic;
+    color: #bbb;
+}
+
+.made-by .heart {
+    color: #e25555;
+    margin: 0 4px;
+}
