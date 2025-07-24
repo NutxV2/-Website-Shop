@@ -1,0 +1,377 @@
+/* รีเซ็ตค่าเริ่มต้นเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* สไตล์พื้นหลังและฟอนต์หลัก */
+body {
+    background-image: linear-gradient(to right bottom, #6f6f6f, #5d5d5d, #4b4b4b, #3a3a3a, #2a2a2a, #222222, #1a1a1a, #121212, #0e0e0e, #0a0a0a, #050505, #000000);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-right: 17px;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* กล่องภายนอก Header */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    max-width: 1500px;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* โลโก้เว็บไซต์ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    user-select: none;
+}
+
+/* แถบเมนู Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-width: 400px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: #858585;
+}
+
+/* ปุ่ม Login / Signup */
+.singin-buttom {
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+.singin-buttom ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.singin-buttom ul li {
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.singin-buttom ul li:hover {
+    background-color: #00ffff22;
+    box-shadow: 0 0 12px #00ffffaa;
+}
+
+.box-singin-buttom {
+    color: #000 !important;
+    background-color: #ddd;
+}
+
+.box-singin-buttom:hover {
+    background-color: #cecece !important;
+}
+
+/* ส่วน Header แนะนำสินค้า */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+    color: #ffffff;
+    user-select: none;
+}
+
+header h1 {
+    position: relative;
+    font-weight: 900;
+    font-size: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    user-select: none;
+    overflow: hidden;
+    display: inline-block;
+}
+
+header h1 .text {
+    background: linear-gradient(45deg, #ffffff 0%, #cfcfcf 10%, #a0a0a0 25%, #707070 40%, #9fffff, #4d4d4d 55%, #707070 70%, #a0a0a0 85%, #ffffff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Animation ไล่เฉดสีโลโก้ */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ลิงก์ทั้งหมดไม่มีขีดเส้นใต้ */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .box-card ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .singin-buttom ul li {
+        padding: 6px 12px;
+    }
+
+    .products-text {
+        font-size: 13px;
+    }
+
+    .detail-card-banner {
+        font-size: 16px;
+        margin: 10px 5px;
+    }
+}
+
+/* Animation Fade In */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header,
+.card-banner-recommended-products {
+    animation: fadeSlideIn 0.8s ease-out;
+}
+
+/* พื้นหลังอวกาศ */
+#space-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1a26, #000000);
+    animation: bgGlow 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgGlow {
+    0% {
+        filter: brightness(1) contrast(1);
+    }
+    100% {
+        filter: brightness(1.1) contrast(1.2);
+    }
+}
+
+/* Footer ท้ายหน้า */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    user-select: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* หัวข้อหมวดหมู่สินค้า */
+.haeder-categories {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.haeder-categories h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #00cfff;
+    letter-spacing: 1px;
+}
+
+/* รายการหมวดหมู่สินค้า */
+.featured-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.list-feature {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.list-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    background: rgba(0, 191, 255, 0.1);
+}
+
+.list-feature a {
+    text-decoration: none;
+    color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-feature svg {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border: none;
+    background: none;
+    display: block;
+    color: #00cfff;
+}
+
+/* ข้อความคำอธิบายแสดงในกล่อง */
+.detail-feature {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    padding: 1px 10px;
+    color: #fff;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+/* ข้อความ Laser Headline */
+.laser-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.laser-text .text {
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    user-select: none;
+    background: linear-gradient(45deg, #ffffff 0%, #cfcfcf 10%, #a0a0a0 25%, #707070 40%, #9fffff, #4d4d4d 55%, #707070 70%, #a0a0a0 85%, #ffffff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+.laser-text .laser {
+    display: none;
+}
+
