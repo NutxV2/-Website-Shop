@@ -142,7 +142,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 300px;
+    padding-top: 250px;
     color: #ffffff;
     user-select: none;
 }
@@ -212,6 +212,7 @@ a {
 }
 
 /* Mobile: ปรับขนาดฟอนต์และขนาดปุ่มให้เหมาะสม */
+
 @media (max-width: 600px) {
     .logo-text {
         font-size: 16px;
@@ -706,7 +707,7 @@ main {
 
 @media (max-width: 768px) {
   .laser-text .text {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 1px;
   }
 
@@ -775,3 +776,79 @@ main {
   }
 }
 
+@media (max-width: 1024px) and (max-height: 600px) {
+  .navbar,
+  .signin-button {
+    display: none;
+  }
+
+  .navbar2,
+  .signin-button2 {
+    display: block;
+  }
+
+  .navbar2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar2 .hamburger {
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .navbar2 ul {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #000000f0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar2 ul.show {
+    left: 0;
+  }
+
+  .navbar2 ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+
+  .signin-button2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .signin-button2 ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .signin-button2 ul li {
+    background-color: #222;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .signin-button2 ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
