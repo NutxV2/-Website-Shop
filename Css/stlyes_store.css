@@ -498,7 +498,7 @@ a {
 /* ปรับให้ laser-text อ่านง่ายขึ้นในมือถือ */
 @media (max-width: 768px) {
   .laser-text .text {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 1px;
   }
 
@@ -522,12 +522,12 @@ a {
   }
 
   .detail-feature {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .total-detail {
-    font-size: 14px;
-    padding: 4px 8px;
+    font-size: 12px;
+    padding: 1px 8px;
   }
 }
 

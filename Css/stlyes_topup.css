@@ -444,7 +444,7 @@ a {
 
 @media (max-width: 768px) {
   .laser-text .text {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 1px;
   }
 
@@ -466,8 +466,8 @@ a {
   }
 
   .detail-feature {
-    font-size: 16px;
-    bottom: 20px;
+    font-size: 13px;
+    bottom: 5px;
   }
 }
 
